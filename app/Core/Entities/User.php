@@ -41,9 +41,6 @@ abstract class User
         $this->password = $password ; 
     }
 
-
-    abstract public function getRole(): string;
-
     //abstract public function login(): boolean ;confirmation 
     abstract public function login(): bool ; 
 
@@ -52,10 +49,11 @@ abstract class User
         $this->lastLogin = date('Y-m-d H:i:s');
     }
 
-    public function getLastLogin(): ?string
-    {
-        return $this->lastLogin;
-    }
+
+
+    abstract public function getRole(): string;
+    abstract public function creerAlbumPrive() : bool ; 
+    abstract public function UploadPhoto() : string ; 
 }
 
 
